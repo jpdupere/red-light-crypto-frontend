@@ -8,7 +8,7 @@ import {
   Code,
   Grid,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { ColorModeSwitcher } from './components/ui/ColorModeSwitcher';
 import { Logo } from './Logo';
 
 function App() {
