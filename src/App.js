@@ -1,30 +1,28 @@
 import React from 'react';
 import {
-  ChakraProvider,
   Box,
   Text,
   Link,
+  HStack,
   VStack,
   Code,
   Grid,
-  theme,
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
+          <HStack><ColorModeSwitcher justifySelf="flex-end" /></HStack>
           <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
+            <Logo fontSize="100px" color="red.500" pointerEvents="none" />
             <Text>
               Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
             </Text>
             <Link
-              color="teal.500"
+              color="red.500"
               href="https://chakra-ui.com"
               fontSize="2xl"
               target="_blank"
@@ -35,7 +33,6 @@ function App() {
           </VStack>
         </Grid>
       </Box>
-    </ChakraProvider>
   );
 }
 
