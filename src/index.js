@@ -3,6 +3,7 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Providers from './Providers';
+import AgeVerifModal from './components/sections/AgeVerifModal'
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
@@ -10,6 +11,7 @@ ReactDOM.render(
   <StrictMode>
     <ColorModeScript />
     <Providers>
+      <AgeVerifModal />
       <App />
     </Providers>
   </StrictMode>,
