@@ -1,5 +1,4 @@
 import React from "react"
-import { useMoralis } from 'react-moralis'
 import LandingLayout from "../components/layouts/LandingLayout"
 import {
     Box,
@@ -11,7 +10,7 @@ import {
 import { Logo } from '../Logo'
 
 export default function Landing(props) {
-  const { isAuthenticated } = useMoralis()
+  const isAuthenticated = null
   
   if (isAuthenticated) {
 
