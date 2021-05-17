@@ -2,6 +2,7 @@ import React from "react"
 import { Box, Button, Flex, Link, Text } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
 import { ColorModeSwitcher } from "../ui/ColorModeSwitcher"
+import ConnectButton from '../ui/ConnectButton'
 
 const MenuItem = ({ children, isLast, to, ...rest }) => {
     return (
@@ -54,9 +55,7 @@ const Header = (props) => {
                 <MenuItem to="/">Home</MenuItem>
                 <MenuItem to="/restricted">NFT</MenuItem>
                 <MenuItem>
-                    <Button size="sm" rounded="md">
-                        Connect
-                    </Button>
+                    <ConnectButton />
                 </MenuItem>
                 <MenuItem isLast><ColorModeSwitcher /></MenuItem>
             </Flex>
