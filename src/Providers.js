@@ -1,26 +1,22 @@
 
-import React from 'react';
+import React from 'react'
+import { Web3Provider } from './utils/web3Provider'
 import {
   ChakraProvider,
   extendTheme,
   withDefaultColorScheme,
-} from '@chakra-ui/react';
-import { MoralisProvider } from 'react-moralis';
+} from '@chakra-ui/react'
 
 
 const theme = extendTheme(withDefaultColorScheme({ colorScheme: "red" }))
-const appId = "B9q6MeP8mhSIxHY2BkUy19FKFTEb49XhucTMNul8"
-const serverUrl = "https://i7a6t8kzhrxk.moralis.io:2053/server"
 
 const Providers = ({ children }) => {
     return (
-        <ChakraProvider theme={theme}>
-            <MoralisProvider 
-                appId={appId}
-                serverUrl={serverUrl}>
-                {children}
-            </MoralisProvider>
-        </ChakraProvider>
+        <Web3Provider>
+            <ChakraProvider theme={theme}>
+                    {children}
+            </ChakraProvider>
+        </Web3Provider>
     )
 }
   
