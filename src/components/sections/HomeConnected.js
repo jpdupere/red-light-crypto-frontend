@@ -9,6 +9,7 @@ import {
   } from '@chakra-ui/react'
 import useTokenBalance from "../../utils/useTokenBalance"
 import BigNumber from 'bignumber.js'
+import SetBalanceButton from '../ui/SetBalanceButton'
 
 export default function HomeConnected(props) {
     const { user } = useMoralis()
@@ -26,8 +27,9 @@ export default function HomeConnected(props) {
                 Your wallet address: <Code fontSize="xl">{user.get('ethAddress')}</Code>
                 </Text>
                 <Text>
-                You have: <Code fontSize="xl">{balanceString}</Code> TestRLC tokens
+                You have: <Code fontSize="xl">{balanceString} TestRLC</Code> tokens
                 </Text>
+                <SetBalanceButton />
             </VStack>
             </Grid>
         </Box>
