@@ -1,17 +1,13 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
-import { useWeb3React } from '@web3-react/core'
+import { useMoralis } from 'react-moralis'
 
 const ConnectButton = ({children, ...rest}) => {
-    const { activate, deactivate } = useWeb3React()
+    const { authenticate, isAuthenticated, isAuthenticating, isLoggingOut, user, logout } = useMoralis();
 
-    let address = null;
-    const login = () => {
-        activate()
-    }
     return (
-        <Button size="sm" rounded="md" {...rest} onClick={login}>
-            {address ? 'Disconnect' : 'Connect'}
+        <Button size="sm" rounded="md" {...rest} disabled={isAuthenticating || isLoggingOut ? true : false } onClick={isAuthenticated ? logout : authenticate}>
+            {isAuthenticated ? 'Disconnect' : 'Connect'}
         </Button>
     )
 }

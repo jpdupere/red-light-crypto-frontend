@@ -1,5 +1,7 @@
 import React from "react"
+import { useMoralis } from "react-moralis"
 import LandingLayout from "../components/layouts/LandingLayout"
+import HomeConnected from '../components/sections/HomeConnected'
 import {
     Box,
     Text,
@@ -10,7 +12,7 @@ import {
 import { Logo } from '../Logo'
 
 export default function Landing(props) {
-  const isAuthenticated = null
+  const { isAuthenticated } = useMoralis();
   
   if (isAuthenticated) {
 
@@ -33,6 +35,9 @@ export default function Landing(props) {
   }
   return (
     <LandingLayout {...props}>
+      isAuthenticated
+      ? <HomeConnected />
+      : (
         <Box textAlign="center" fontSize="xl">
           <Grid minH="100vh" p={3}>
           <VStack spacing={8}>
@@ -46,6 +51,7 @@ export default function Landing(props) {
           </VStack>
           </Grid>
       </Box>
+      )
     </LandingLayout>
   )
 }
