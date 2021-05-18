@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Button, Flex, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Link, Text } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
 import { ColorModeSwitcher } from "../ui/ColorModeSwitcher"
 import ConnectButton from '../ui/ConnectButton'

@@ -16,7 +16,7 @@ const AgeVerifModal = () => {
     // localStorage ageVerif is a timestamp of the last time the age was checked
     const verified = localStorage.getItem('ageVerif') > Date.now() - 1000 * 60 * 60 * 24 * 30
 
-    const { isOpen, onOpen, onClose } = useDisclosure({defaultIsOpen: !verified})
+    const { isOpen, onClose } = useDisclosure({defaultIsOpen: !verified})
 
     const verify = (onClose) => {
       localStorage.setItem('ageVerif', Date.now())
