@@ -24,4 +24,10 @@ In order to access the _Restrcited_ page, the user needs to have a minimum of 10
 
 ## Other features
 
+### Age verification
+
+The age verification popup will request the user to confirm age and the verification will be saved in localstorage for 30 days.
+
+### Color mode
+
 Not a big deal, but you can switch color theme from light to dark, like everywhere else...
