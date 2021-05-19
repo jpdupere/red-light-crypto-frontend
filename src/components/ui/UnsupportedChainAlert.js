@@ -16,9 +16,8 @@ const UnsupportedChainAlert = () => {
             setChainId(chainId)
         }
 
-        requestChainId()
-
         if (metamask) {
+            requestChainId()
             setChainId()
             let chainSub = metamask.on('chainChanged', () => {
                 // Handle the new chain.
