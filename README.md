@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Intro
 
-## Available Scripts
+This project is a demo React project for the Red Light Crypto app.
 
-In the project directory, you can run:
+A live demo version is available here: [https://i7a6t8kzhrxk.moralis.io/](https://i7a6t8kzhrxk.moralis.io/)
 
-### `npm start`
+In order to use it, you must use _Metamask_ with _Binance Smart Chain - Testnet_
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## TestRLC
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+In order to demo the app, I created a _TestRLC_ ERC20 token on the _Binance Smart Chain - Testnet_. The contract address is `0x9B0d8B7114231518B885EAd7826e639F86ca135F`. The contract allows the user to set the balance of _TestRLC_ for any address.
 
-### `npm test`
+## Pages
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Home page
 
-### `npm run build`
+The _Home_ page is a standard landing page and does not require the user to be connected, but presents the menu and connect button to allow the user to connect with _Metamask_.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once the user is connected to the _Binance Smart Chain - Testnet_, the homepage will display relevant informations such as the current account address and the TestRLC token balance. A button is also added to set the current account's TestRLC token balance. This will communicate with the smart contract and replace the current amount of TestRLC for that account. The total supply of tokens for the contract is adjusted at the same time.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Restricted page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In order to access the _Restrcited_ page, the user needs to have a minimum of 100 RLC at their address. If they have access, _Access granted!_ message is displayed. Otherwise, an instruction message will be displayed.
 
-### `npm run eject`
+## Other features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Not a big deal, but you can switch color theme from light to dark, like everywhere else...
