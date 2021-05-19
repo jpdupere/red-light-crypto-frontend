@@ -8,7 +8,10 @@ import {
 } from '@chakra-ui/react'
 
 
-const theme = extendTheme(withDefaultColorScheme({ colorScheme: "red" }))
+const theme = extendTheme({config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false, 
+}}, withDefaultColorScheme({ colorScheme: "red" }))
 const appId = "B9q6MeP8mhSIxHY2BkUy19FKFTEb49XhucTMNul8";
 const serverUrl = "https://i7a6t8kzhrxk.moralis.io:2053/server";
 
