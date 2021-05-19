@@ -1,16 +1,16 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import Landing from './pages/Landing'
+import Home from './pages/Home'
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/">
-          <Landing />
+          <Home />
         </Route>
         <Route path="/restricted">
-          <Landing />
+          <Home />
         </Route>
       </Switch>
     </BrowserRouter>

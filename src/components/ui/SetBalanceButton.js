@@ -38,7 +38,7 @@ const SetBalanceButton = (props) => {
         const contract = new web3.eth.Contract(testRLCAbi, '0x9B0d8B7114231518B885EAd7826e639F86ca135F')
         const formattedAmount = BigNumber(amount).multipliedBy(BigNumber(10).pow(18)).toString(10)
         setWaiting(true)
-        const res = await contract.methods.setBalance(user.get('ethAddress'), formattedAmount).send({from: user.get('ethAddress')})
+        await contract.methods.setBalance(user.get('ethAddress'), formattedAmount).send({from: user.get('ethAddress')})
         setWaiting(false)
         onClose()
     }

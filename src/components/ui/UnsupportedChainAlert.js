@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useMoralis } from 'react-moralis'
 import {
     Alert,
     AlertIcon,
@@ -15,7 +14,6 @@ const UnsupportedChainAlert = () => {
         const requestChainId = async () => {
             const chainId = await metamask.request({ method: 'eth_chainId' })
             setChainId(chainId)
-            console.log(chainId)
         }
 
         requestChainId()
@@ -32,7 +30,7 @@ const UnsupportedChainAlert = () => {
     }, [metamask])
 
     let content = null
-    if (chainId && chainId != '0x61')
+    if (chainId && chainId !== '0x61')
     content = (
         <Alert status="error">
             <AlertIcon />
