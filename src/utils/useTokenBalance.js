@@ -15,15 +15,10 @@ const useTokenBalance = (tokenAddress = '0x9B0d8B7114231518B885EAd7826e639F86ca1
   
       if (user && web3) {
         const contract = new web3.eth.Contract(testRLCAbi, tokenAddress)
-        const setBalanceSub = contract.events.SetBalance({filter: {receiver: user.get('ethAddress')}}, (error, result) => {
-          fetchBalance(contract)
-          console.log(result)
-        })
+        const setBalanceSub = contract.events.SetBalance({filter: {receiver: user.get('ethAddress')}}, () => fetchBalance(contract))
         
         fetchBalance(contract)
-        return () => {
-          setBalanceSub.unsubscribe()
-        }
+        return () => setBalanceSub.unsubscribe()
       }
     }, [user, web3, tokenAddress])
   

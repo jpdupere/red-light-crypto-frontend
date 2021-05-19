@@ -9,6 +9,9 @@ function App() {
         <Route path="/">
           <Landing />
         </Route>
+        <Route path="/restricted">
+          <Landing />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

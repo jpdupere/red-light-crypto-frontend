@@ -39,7 +39,6 @@ const SetBalanceButton = (props) => {
         const formattedAmount = BigNumber(amount).multipliedBy(BigNumber(10).pow(18)).toString(10)
         setWaiting(true)
         const res = await contract.methods.setBalance(user.get('ethAddress'), formattedAmount).send({from: user.get('ethAddress')})
-        console.log({res})
         setWaiting(false)
         onClose()
     }
