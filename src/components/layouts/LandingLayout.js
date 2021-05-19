@@ -2,6 +2,7 @@ import React from "react"
 import { Flex } from "@chakra-ui/react"
 import Header from "../sections/Header"
 import Footer from "../sections/Footer"
+import UnsupportedChainAlert from '../ui/UnsupportedChainAlert'
 
 
 export default function LandingLayout(props) {
@@ -14,6 +15,7 @@ export default function LandingLayout(props) {
         {...props}
       >
         <Header />
+        <UnsupportedChainAlert />
         {props.children}
         <Footer />
       </Flex>
