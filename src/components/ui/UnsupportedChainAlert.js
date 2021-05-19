@@ -20,12 +20,13 @@ const UnsupportedChainAlert = () => {
 
         if (metamask) {
             setChainId()
-            metamask.on('chainChanged', () => {
+            let chainSub = metamask.on('chainChanged', () => {
                 // Handle the new chain.
                 // Correctly handling chain changes can be complicated.
                 // We recommend reloading the page unless you have good reason not to.
                 window.location.reload();
             });
+            return () => chainSub.removeAllListeners('chainChanged')
         }
     }, [metamask])
 

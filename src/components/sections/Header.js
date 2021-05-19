@@ -1,8 +1,9 @@
 import React from "react"
-import { Box, Flex, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Text } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
 import { ColorModeSwitcher } from "../ui/ColorModeSwitcher"
 import ConnectButton from '../ui/ConnectButton'
+import { Link } from 'react-router-dom'
 
 const MenuItem = ({ children, isLast, to, ...rest }) => {
     return (
@@ -53,7 +54,7 @@ const Header = (props) => {
                 pt={[4, 4, 0, 0]}
                 >
                 <MenuItem to="/">Home</MenuItem>
-                <MenuItem to="/restricted">NFT</MenuItem>
+                <MenuItem to="/restricted">Restricted</MenuItem>
                 <MenuItem>
                     <ConnectButton />
                 </MenuItem>
