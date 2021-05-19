@@ -8,14 +8,22 @@ const useTokenBalance = (tokenAddress = '0x9B0d8B7114231518B885EAd7826e639F86ca1
     const { user, web3 } = useMoralis()
   
     useEffect(() => {
-      const fetchBalance = async () => {
-        const contract = new web3.eth.Contract(testRLCAbi, tokenAddress)
+      const fetchBalance = async (contract) => {
         const res = await contract.methods.balanceOf(user.get('ethAddress')).call()
         setBalance(new BigNumber(res))
       }
   
       if (user && web3) {
-        fetchBalance()
+        const contract = new web3.eth.Contract(testRLCAbi, tokenAddress)
+        const setBalanceSub = contract.events.SetBalance({filter: {receiver: user.get('ethAddress')}}, (error, result) => {
+          fetchBalance(contract)
+          console.log(result)
+        })
+        
+        fetchBalance(contract)
+        return () => {
+          setBalanceSub.unsubscribe()
+        }
       }
     }, [user, web3, tokenAddress])
   
